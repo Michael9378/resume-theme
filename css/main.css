@@ -1,0 +1,151 @@
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/*------------------------------------*\
+    $FONTS
+\*------------------------------------*/
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+/************************************************/
+/**************** Global Classes ****************/
+/************************************************/
+/************** scss/global/animation **************/
+/*------------------------------------*\
+    $ANIMATIONS
+\*------------------------------------*/
+/************** scss/global/elements **************/
+/*------------------------------------*\
+    $BUTTONS AND ICONS
+\*------------------------------------*/
+/*********** scss/global/containers ***********/
+/*------------------------------------*\
+    $CONTAINER STYLES
+\*------------------------------------*/
+.hero-content {
+  height: 100vh;
+  position: relative; }
+
+.hero-section.has-featured-image {
+  background-size: cover;
+  background-position-x: center; }
+
+.center-container {
+  position: absolute;
+  width: 100%;
+  bottom: 25%;
+  text-align: center; }
+
+.section-image {
+  background-size: cover;
+  background-position: center; }
+
+.general-section {
+  margin: 25vh 0; }
+  .general-section .section-image {
+    height: 50vh;
+    min-height: 300px; }
+
+/************** scss/global/forms **************/
+/*------------------------------------*\
+    $FORM STYLES
+\*------------------------------------*/
+/************** scss/global/footer **************/
+/*------------------------------------*\
+    $FOOTER STYLES
+\*------------------------------------*/
+/************** scss/global/header **************/
+/*------------------------------------*\
+    $HEADER
+\*------------------------------------*/
+/************** scss/global/helpers **************/
+/*------------------------------------*\
+    $HELPER CLASSES
+\*------------------------------------*/
+.no-pad {
+  padding: 0 !important; }
+
+.no-margin {
+  margin: 0 !important; }
+
+.margin-top {
+  margin-top: 22.32px; }
+
+.margin-bottom {
+  margin-bottom: 22.32px; }
+
+.padding-top {
+  padding-top: 22.32px; }
+
+.padding-bottom {
+  padding-bottom: 22.32px; }
+
+.text-right {
+  text-align: right !important; }
+
+.text-center {
+  text-align: center !important; }
+
+.relative {
+  position: relative !important; }
+
+.absolute {
+  position: absolute !important; }
+
+.fright {
+  float: right; }
+
+.vert-center {
+  position: absolute;
+  top: 50%;
+  /* transform mixin */
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.flex-xs {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+@media (min-width: 768px) {
+  .flex-sm {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; } }
+
+@media (min-width: 992px) {
+  .flex-md {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; } }
+
+@media (min-width: 1200px) {
+  .flex-lg {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; } }
+
+/************* scss/global/reset *************/
+/*------------------------------------*\
+    $ELEMENT BASES
+\*------------------------------------*/
+/************* scss/global/sidebar *************/
+/*------------------------------------*\
+    $SIDEBAR
+\*------------------------------------*/
+/************** scss/global/text **************/
+/*------------------------------------*\
+    $TEXT STYLES
+\*------------------------------------*/
+/*************************************************/
+/****************** Junk-Drawer ******************/
+/*************************************************/
+
+/*# sourceMappingURL=main.css.map */

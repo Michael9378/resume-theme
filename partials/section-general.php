@@ -1,72 +1,53 @@
-<?php
-/**
- * @package _tk
- */
+<?php 	/*
+		* General section for pages
+		* Section id is page title in slug form + count of repeater
+		* Sections are repeated for each row in repeater
+		* Sections will have alt classes if odd section
+		*/
 ?>
 
-
-<?php // Styling Tip!
-
-// Want to wrap for example the post content in blog listings with a thin outline in Bootstrap style?
-// Just add the class "panel" to the article tag here that starts below.
-// Simply replace post_class() with post_class('panel') and check your site!
-// Remember to do this for all content templates you want to have this,
-// for example content-single.php for the post single view. ?>
-
-<section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header>
-		<h1 class="page-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-
-		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php _tk_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php if ( is_search() || is_archive() ) : // Only display Excerpts for Search and Archive Pages ?>
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-	<?php else : ?>
-	<div class="entry-content">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', '_tk' ) ); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', '_tk' ),
-				'after'  => '</div>',
-			) );
+<?php if( have_rows('general_section_repeater') ): $count = 0;?>
+	<?php while( have_rows('general_section_repeater') ): the_row(); ?>
+		<?php 
+		// create a slug from section title and count
+		$sectionTitle = get_sub_field('headline'); 
+		$sectionSlug = strtolower( str_replace( " ", "-", $sectionTitle ) ) . "-" . ( $count++ );
+		$sectionClass = "general-section";
+		if( $count%2 ) 
+			$sectionClass .= " alt";
 		?>
-	</div><!-- .entry-content -->
-	<?php endif; ?>
-
-	<footer class="entry-meta">
-		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
-			<?php
-				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', '_tk' ) );
-				if ( $categories_list && _tk_categorized_blog() ) :
-			?>
-			<span class="cat-links">
-				<?php printf( __( 'Posted in %1$s', '_tk' ), $categories_list ); ?>
-			</span>
-			<?php endif; // End if categories ?>
-
-			<?php
-				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', '_tk' ) );
-				if ( $tags_list ) :
-			?>
-			<span class="tags-links">
-				<?php printf( __( 'Tagged %1$s', '_tk' ), $tags_list ); ?>
-			</span>
-			<?php endif; // End if $tags_list ?>
-		<?php endif; // End if 'post' == get_post_type() ?>
-
-		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', '_tk' ), __( '1 Comment', '_tk' ), __( '% Comments', '_tk' ) ); ?></span>
-		<?php endif; ?>
-
-		<?php edit_post_link( __( 'Edit', '_tk' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-meta -->
-</section><!-- #post-## -->
+		<section id="<?php echo $sectionSlug; ?>" class="<?php echo $sectionClass; ?>">
+			<div class="container">
+				<div class="row">
+					<!-- col-sm-10 to leave room for navigation on the right for non-mobile -->
+					<div class="col-sm-10">
+						<div class="row">
+							<?php // mark whether content section has image or not for spacing.
+							if( get_sub_field('featured_image') ): ?>
+								<div class="section-content has-image col-sm-8">
+							<?php else: ?>
+								<div class="section-content no-image">
+							<?php endif; ?>
+									<h1 class="section-head">
+										<?php echo $sectionTitle; ?></h1>
+									<?php // subline isn't required
+									if( get_sub_field('subline') ): ?>
+										<h2 class="section-subhead">
+											<?php the_sub_field('subline'); ?></h2>
+									<?php endif; ?>
+									<hr class="section-splitter">
+									<?php the_sub_field('content'); ?>
+								</div>
+							<?php // featured image isn't required
+							if( get_sub_field('featured_image') ): ?>
+								<div class="section-image col-sm-4" style="
+								background-image: url(<?php the_sub_field('featured_image'); ?>);"></div>
+							<?php endif; ?>
+						</div><!-- /row -->
+					</div><!-- /col-sm-10 -->
+					<div class="clearfix"></div>
+				</div><!-- /row -->
+			</div><!-- /container -->
+		</section><!-- #post-## -->
+	<?php endwhile; ?>
+<?php endif; ?>
