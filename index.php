@@ -17,8 +17,10 @@ get_header(); ?>
 
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
+			<?php get_template_part( 'partials/navigation', 'home-scroller' ); ?>
 			<?php get_template_part( 'partials/section', 'hero' ); ?>
 			<?php get_template_part( 'partials/section', 'general' ); ?>
+			<?php get_template_part( 'partials/section', 'contact' ); ?>
 
 		<?php endwhile; ?>
 

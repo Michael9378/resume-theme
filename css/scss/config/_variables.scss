@@ -3,37 +3,35 @@
 \*------------------------------------*/
 
 // Colors
-$white 			: #fff;
-$black 			: #000;
-$dim 			: rgba(0,0,0,0.75);
-$dim-half		: rgba(0,0,0,0.5);
+$white 			: #EDEDED;
+$black 			: #333;
+$dim 			: rgba(0,0,0,0.5);
 $lit 			: rgba(255,255,255,0.5);
 $clear			: rgba(0,0,0,0);
-$success		: #85bb65;
-$warning		: #eaab00;
-$error			: #cd4354;
 
-$primary-color 		: #4C4C4C;
-$primary-dark 		: $black;
-$primary-light 		: #A5A5A5;
+$dark-primary	: #49516F;
+$dark-secondary	: #1A2026;
+$light-primary	: #A4CDEB;
+$light-secondary: #9799CA;
+$light-tert		: #D0CCD0;
 
-$secondary-color	: #EAAB00;
-
-$header-back-color	: $primary-color;
+$success		: #70AE6E;
+$warning		: #FFC13D;
+$error			: #9E2B25;
 
 
 // Typography
 $font-size		: 18px;
-$font-aspect	: 1.24;
+$font-aspect	: 1.25;
 $line-height	: $font-size*$font-aspect;
-$font-color		: $primary-color;
+$font-color		: $black;
+$font-primary	: 'Arimo', sans-serif;
+$font-secondary	: 'Vollkorn', serif;
 
 // Spacing
-$margin 		: $line-height/2;
-$pad 			: $line-height/2;
-$border-width	: 2px;
+$pad 			: 1em*$font-aspect/2;
+$border-width	: 1px;
 $gutter			: 15px;
-$gutter-thin	: 5px;
 
 // Boostrap break points
 // note, xs is default and thus not defined
@@ -43,5 +41,5 @@ $screen-lg-min	: 1200px;
 
 // transition speeds
 $fast 			: 0.25s;
-$normal-speed	: 0.4s;
-$slow			: 0.7s;
+$normal-speed	: 0.5s;
+$slow			: 1.5s;

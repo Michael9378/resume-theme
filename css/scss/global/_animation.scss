@@ -1,3 +1,108 @@
 /*------------------------------------*\
     $ANIMATIONS
 \*------------------------------------*/
+
+.scroll-menu {
+	opacity: 1;
+	@include transition(all, $slow);
+	transition-delay: 2*$slow;
+}
+
+.hero-content {
+	h1, h2, h3, h4, h5, p, li, hr {
+		opacity: 1;
+		@include transform(translate(0));
+		@include transition(all, $slow);
+	}
+	h1 { transition-delay: .5s; }
+	h2 { transition-delay: 1s; }
+	h3, h4, h5, p, li, hr { transition-delay: 1.5s }
+}
+
+.general-section {
+	hr {
+		@include transition(all, $slow);
+	}
+	h1, h2, h3, h4, h5, p, li {
+		opacity: 1;
+		@include transform(translate(0));
+		@include transition(all, $slow);
+	}
+	.section-image {
+		opacity: 1;
+		@include transition(all, $slow);
+	}
+}
+
+#contact-section {
+	p, li, h1, h2, h3, h4, h5, h6, hr, i, input, textarea, :not(input[type='submit']) {
+		opacity: 1;
+		@include transition(all, $slow);
+		@include transform(translate(0));
+	}
+}
+
+.animate-in {
+
+	&.scroll-menu {
+		opacity: 0;
+	}
+
+	&.hero-content {
+		h1, h2, h3, h4, h5, p, li {
+			opacity: 0;
+			@include transform(translateY(50px));
+			@include transition(all, $slow);
+		}
+		h1 {
+			@include transform(translate(50px, 0));
+		}
+		h2 {
+			@include transform(translate(-50px, 0));
+		}
+		hr {
+			width: 0;
+		}
+	}
+
+	&.general-section {
+		hr {
+			width: 0px;
+			@include transition(all, 0);
+		}
+		h1, h2, h3 {
+			opacity: 0;
+			@include transform(translateX(-50px));
+			@include transition(all, 0);
+		}
+		h4, h5, p, li {
+			opacity: 0;
+			@include transform(translateX(50px));
+			@include transition(all, 0);
+		}
+		.section-image {
+			height: 0px!important;
+			min-height: 0;
+			opacity: 0;
+			@include transition(all, 0);
+		}
+	}
+
+	&#contact-section {
+		p, li, h1, h2, h3, h4, h5, h6, hr, i, input, textarea, :not(input[type='submit']) {
+			opacity: 0;
+			@include transition(all, 0);
+		}
+		h1, h2, h3, h4, h5 {
+			@include transform(translateX(50px));
+		}
+		p, li {
+			@include transform(translateX(-50px));
+		}
+		input, textarea {
+			width: 0%;
+			padding: $pad/2 0;
+			border-width: 0;
+		}
+	}
+}

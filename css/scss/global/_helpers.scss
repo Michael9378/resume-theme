@@ -11,21 +11,13 @@
 	margin: 0!important;
 }
 
-.margin-top {
-	margin-top: $margin*2;
-}
+.margin-top {margin-top: 2*$pad;}
 
-.margin-bottom {
-	margin-bottom: $margin*2;
-}
+.margin-bottom {margin-bottom: 2*$pad;}
 
-.padding-top {
-	padding-top: $pad*2;
-}
+.padding-top {padding-top: 2*$pad;}
 
-.padding-bottom {
-	padding-bottom: $pad*2;
-}
+.padding-bottom {padding-bottom: 2*$pad;}
 
 .text-right {
 	text-align: right!important;
@@ -43,14 +35,10 @@
 	position: absolute!important;
 }
 
-.fright {
-	float: right;
-}
-
 .vert-center {
 	position: absolute;
 	top: 50%;
-	@include transform(translateY(-50%))
+	@include transform(translateY(-50%));
 }
 
 @include bootstrapify(flex, (

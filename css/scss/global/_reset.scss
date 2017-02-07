@@ -1,3 +1,79 @@
 /*------------------------------------*\
     $ELEMENT BASES
 \*------------------------------------*/
+
+body {
+	color: $font-color;
+	background: $white;
+	font-family: $font-primary;
+	font-size: $font-size*(14/18); /* size down to 14px font for mobile*/
+	@media (min-width: $screen-sm-min) {
+		font-size: $font-size; /* Desktop font size is 18px */
+	}
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: $pad;
+}
+
+ul, ol {margin-bottom: $pad;}
+
+label {margin-bottom: $pad/2;}
+
+a {
+	color: $dark-primary;
+	@include transition(all, $fast);
+	&:hover, &:focus {
+		color: $light-primary;
+	}
+	&:visited {
+		color: $light-secondary;
+	}
+}
+
+h1, h2, h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+h4, h5 {
+	margin-bottom: $pad;
+}
+
+h1,h2,h5 {
+	font-family: $font-secondary;
+}
+
+h1 {
+	font-size: pow(1.5, 4)*1em;
+}
+
+h2 {
+	font-size: pow(1.5, 3)*1em;
+}
+
+h3 {
+	font-size: pow(1.5, 2)*1em;
+}
+
+h4 {
+	font-size: 1.5em;
+}
+
+h5 {
+	font-weight: 700;
+}
+
+hr {
+	width: 100%;
+	border-top: 2px solid $light-primary;
+	margin-top: $pad;
+	margin-bottom: $pad;
+	&.section-splitter {
+    	display: inline-block;
+		width: 200px;
+		max-width: 100%;
+		margin-left: $gutter;
+	}
+}

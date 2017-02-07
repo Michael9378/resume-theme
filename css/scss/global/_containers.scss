@@ -2,14 +2,22 @@
     $CONTAINER STYLES
 \*------------------------------------*/
 
+.container { padding: 0; }
+#hero-section.has-featured-image {
+    background-size: cover;
+    background-position-x: center;
+}
+
 .hero-content {
     height: 100vh;
     position: relative;
+    color: $white;
+    a { color: $white!important; }
 }
 
-.hero-section.has-featured-image {
-    background-size: cover;
-    background-position-x: center;
+.rel-100 {
+    position: relative;
+    height: 100%;
 }
 
 .center-container {
@@ -19,15 +27,38 @@
     text-align: center;
 }
 
+.section-content {
+    padding-bottom: $pad;
+}
+
 .section-image {
     background-size: cover;
     background-position: center;
+    max-height: 100vw;
+}
+
+
+.general-section, #contact-section {
+    padding: 25vh 0;
 }
 
 .general-section {
-    margin: 25vh 0;
+    padding: 25vh 0;
     .section-image {
 	    height: 50vh;
 	    min-height: 300px;
 	}
+    &.alt {
+        color: $white;
+        background-color: $dark-primary;
+        @media (min-width: $screen-sm-min) {
+            .section-content.has-image {
+                float: right;
+            }            
+        }
+        &.secondary {
+            color: $black;
+            background-color: $light-tert;
+        }
+    }
 }

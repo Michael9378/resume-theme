@@ -6,7 +6,7 @@
 		*/
 ?>
 
-<?php if( have_rows('general_section_repeater') ): $count = 0;?>
+<?php if( have_rows('general_section_repeater') ): $count = 1;?>
 	<?php while( have_rows('general_section_repeater') ): the_row(); ?>
 		<?php 
 		// create a slug from section title and count
@@ -15,24 +15,26 @@
 		$sectionClass = "general-section";
 		if( $count%2 ) 
 			$sectionClass .= " alt";
+		// if( $count%4 == 1 )
+			// $sectionClass .= " secondary";
 		?>
 		<section id="<?php echo $sectionSlug; ?>" class="<?php echo $sectionClass; ?>">
 			<div class="container">
 				<div class="row">
 					<!-- col-sm-10 to leave room for navigation on the right for non-mobile -->
-					<div class="col-sm-10">
+					<div class="col-md-10">
 						<div class="row">
 							<?php // mark whether content section has image or not for spacing.
 							if( get_sub_field('featured_image') ): ?>
-								<div class="section-content has-image col-sm-8">
+								<div class="section-content has-image col-md-8">
 							<?php else: ?>
 								<div class="section-content no-image">
 							<?php endif; ?>
-									<h1 class="section-head">
+									<h2 class="section-head">
 										<?php echo $sectionTitle; ?></h1>
 									<?php // subline isn't required
 									if( get_sub_field('subline') ): ?>
-										<h2 class="section-subhead">
+										<h3 class="section-subhead">
 											<?php the_sub_field('subline'); ?></h2>
 									<?php endif; ?>
 									<hr class="section-splitter">
@@ -40,11 +42,13 @@
 								</div>
 							<?php // featured image isn't required
 							if( get_sub_field('featured_image') ): ?>
-								<div class="section-image col-sm-4" style="
-								background-image: url(<?php the_sub_field('featured_image'); ?>);"></div>
+								<div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
+									<div class="section-image" style="
+										background-image: url(<?php the_sub_field('featured_image'); ?>);"></div>
+								</div>
 							<?php endif; ?>
 						</div><!-- /row -->
-					</div><!-- /col-sm-10 -->
+					</div><!-- /col-md-10 -->
 					<div class="clearfix"></div>
 				</div><!-- /row -->
 			</div><!-- /container -->

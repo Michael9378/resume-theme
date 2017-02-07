@@ -1,3 +1,38 @@
 /*------------------------------------*\
     $BUTTONS AND ICONS
 \*------------------------------------*/
+
+.social-icons {
+	margin-bottom: $pad;
+	text-align: center;
+    a.social-link {
+    	display: inline-block;
+    	padding: 0 $gutter;
+    	font-size: pow(1.5, 2)*1em;
+    }
+}
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+	padding: $pad $pad*2;
+	border: 2px solid $dark-primary;
+    color: $dark-primary;
+    background-color: $clear;
+    @include transition(all, $fast);
+    &:hover, &:focus {
+    	border-color: $white;
+    	color: $white;
+    	background-color: $dark-primary;
+    }
+
+    &.alt {
+    	border-color: $white;
+    	color: $white;
+    	background-color: $dark-primary;
+	    &:hover, &:focus {
+	    	border-color: $dark-primary;
+	    	color: $dark-primary;
+	    	background-color: $white;
+	    }
+
+    }
+}

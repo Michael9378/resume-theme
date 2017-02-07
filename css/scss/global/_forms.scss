@@ -1,3 +1,37 @@
 /*------------------------------------*\
     $FORM STYLES
 \*------------------------------------*/
+
+
+ul.gform_fields {
+	padding: 0;
+	list-style: none;
+	li.gfield {
+		margin: 2*$pad 0;
+	}
+}
+
+.gfield_required, .gfield_error .validation_message, .validation_error {
+	color: $error;
+}
+
+.gform_description, .validation_error {
+	margin-bottom: $pad;
+}
+
+.gform_title {
+	margin-bottom: $pad/2;
+}
+
+.gfield_warning .validation_message {
+	color: $warning;
+}
+
+.gfield {
+	input, textarea {
+		width: 100%;
+		margin: 0;
+		padding: $pad/2 $pad;
+		border: 2px solid $light-primary;
+	}
+}

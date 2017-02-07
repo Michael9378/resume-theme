@@ -1,3 +1,45 @@
 /*------------------------------------*\
     $HEADER
 \*------------------------------------*/
+
+nav#single-page-nav {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    .container {
+	    position: relative;
+	    padding: 0;
+	}
+}
+
+.scroll-menu-container {
+    position: absolute;
+	width: (100/6)*1%;
+    right: 15px;
+    top: 50vh;
+    transform: translateY(-50%);
+}
+
+.scroll-menu {
+    margin: 0;
+    padding: 0;
+    padding-left: 2*$gutter;
+    text-align: center;
+    list-style: none;
+    cursor: pointer;
+	a {
+    	position: relative;
+		display: inline-block;
+		width: 100%;
+	    margin-top: -0.5em;
+	    border-radius: 5px;
+	    padding: 1.25em 1.5em;
+	    color: white!important;
+	    background: $dark-secondary;
+	    text-decoration: none!important;
+	}
+	a:hover, a.active {
+    	z-index: 10;
+	    background: $light-primary;
+	}
+}
