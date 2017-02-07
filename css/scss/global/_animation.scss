@@ -35,11 +35,15 @@
 }
 
 #contact-section {
-	p, li, h1, h2, h3, h4, h5, h6, hr, i, input, textarea, :not(input[type='submit']) {
+	p, li, h1, h2, h3, h4, h5, h6, hr, i, input, textarea {
 		opacity: 1;
 		@include transition(all, $slow);
 		@include transform(translate(0));
 	}
+	a, .button, input[type="submit"] {
+		@include transition(all, $fast);
+	}
+
 }
 
 .animate-in {

@@ -75,7 +75,7 @@
   -o-transition: all 1.5s;
   transition: all 1.5s; }
 
-#contact-section p, #contact-section li, #contact-section h1, #contact-section h2, #contact-section h3, #contact-section h4, #contact-section h5, #contact-section h6, #contact-section hr, #contact-section i, #contact-section input, #contact-section textarea, #contact-section :not(input[type='submit']) {
+#contact-section p, #contact-section li, #contact-section h1, #contact-section h2, #contact-section h3, #contact-section h4, #contact-section h5, #contact-section h6, #contact-section hr, #contact-section i, #contact-section input, #contact-section textarea {
   opacity: 1;
   /* transition mixin */
   -webkit-transition: all 1.5s;
@@ -89,6 +89,13 @@
   -ms-transform: translate(0);
   -o-transform: translate(0);
   transform: translate(0); }
+#contact-section a, #contact-section .button, #contact-section input[type="submit"] {
+  /* transition mixin */
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s; }
 
 .animate-in.scroll-menu {
   opacity: 0; }
@@ -235,8 +242,12 @@ button, html input[type=button], input[type=reset], input[type=submit] {
 /*------------------------------------*\
     $CONTAINER STYLES
 \*------------------------------------*/
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden; }
+
 .container {
-  padding: 0; }
+  padding: 0 15px; }
 
 #hero-section.has-featured-image {
   background-size: cover;
@@ -278,6 +289,10 @@ button, html input[type=button], input[type=reset], input[type=submit] {
   .general-section.alt {
     color: #EDEDED;
     background-color: #49516F; }
+    .general-section.alt a {
+      color: #A4CDEB; }
+    .general-section.alt a:hover {
+      color: #EDEDED; }
     @media (min-width: 768px) {
       .general-section.alt .section-content.has-image {
         float: right; } }
@@ -347,9 +362,8 @@ nav#single-page-nav {
     position: relative;
     display: inline-block;
     width: 100%;
-    margin-top: -0.5em;
-    border-radius: 5px;
-    padding: 1.25em 1.5em;
+    margin-top: -1px;
+    padding: 1.25em;
     color: white !important;
     background: #1A2026;
     text-decoration: none !important; }
