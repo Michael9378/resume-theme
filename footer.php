@@ -14,7 +14,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="site-footer-inner col-sm-12">
-
+				<p class="text-right">This site built by <a href="http://michaeljscott.net/">Michael Scott</a> | <a href="https://github.com/Michael9378/resume-theme">View this site on Github</a></p>
 			</div>
 		</div>
 	</div><!-- close .container -->

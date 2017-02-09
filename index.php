@@ -17,6 +17,10 @@ get_header(); ?>
 
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
+			<?php 
+			if( get_field("customize_styles") )
+				get_template_part( 'partials/dynamic', 'styles' );
+			?>
 			<?php get_template_part( 'partials/navigation', 'home-scroller' ); ?>
 			<?php get_template_part( 'partials/section', 'hero' ); ?>
 			<?php get_template_part( 'partials/section', 'general' ); ?>

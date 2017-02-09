@@ -148,6 +148,11 @@ require get_template_directory() . '/includes/template-tags.php';
 require get_template_directory() . '/includes/extras.php';
 
 /**
+ * ACF custom fields required for this theme.
+ */
+require get_template_directory() . '/includes/acf-fields.php';
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/includes/customizer.php';
